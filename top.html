@@ -1,0 +1,122 @@
+<html>
+<head>
+
+<title>Cookery</title>
+<style>
+    	<!--
+        	A:link { text-decoration:none;}
+        	A:visited { text-decoration:none;}
+        	A:active { text-decoration:none;}
+    	-->
+</style>
+</head>
+<body>
+
+<table width=900 border=0 cellspacing=0 cellpadding=0>
+<tr height=70> 
+  <td rowspan=2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href=index.html><img src='title2.png' ></td>
+  <td rowspan=3 ><form method=post action=search2.php><table border=0><td>
+	  <input type=text name=key size=20 style='border-top:none;border-left:none;border-right:none;border-bottom:3px solid black; width:300; height:40;'></td><td valign=middle>
+	  <input type=image src=lens.png width=30 style='margin-top:10px;'></td></table></form>
+  </td>
+  <td valign=top width=200 align=right>
+		<a href=showbag.php><img src='cart.png' width=50 height=50></a>
+		<a href=mypage.php><img src='mypage.png' width=55 height=50></a>
+		<a href=showheart.php><img src='heart.png'></a>
+  </td>
+</tr>
+<tr>
+	
+	<td align=right>
+		<? if (!$UserID) { ?>
+
+<table width=170 cellspacing=0 cellpadding=0 border=1   align=right style=" border-collapse:collapse;">
+<tr><td>
+<form method=post action=login.php onsubmit="if(!this.uid.value || !this.upass.value)   return false;">
+<table border=0 width=170>
+      <tr><td align=right>ID: </td><td><input type=text size=12 name=uid style='border-left:none;border-right:none;border-top:none;border-bottom:3px solid pink;'></td></tr>
+<tr><td align=right>PW: </td><td><input type=password size=12   name=upass style='border-left:none;border-right:none;border-top:none;border-bottom:3px solid pink;'></td></tr>
+<tr><td colspan=2 align=center><input type=submit value=로그인 style='border-radius:4px; background-color:#FFE4E1; border:1px solid black;'></td></tr>
+</form>
+</table>
+</td></tr>
+</table>
+
+<table width=170 cellspacing=0 cellpadding=0 border=0   align=right>
+<tr><td align=center><table><tr><td>
+<form method=post action=join.html>
+<input type=submit value=회원가입 style='border-radius:4px; background-color:#FFE4E1; border:1px solid black;'></form>
+</td><td><form method=post action=findidpw.php>
+<input type=submit value=비번찾기 style='border-radius:4px; background-color:#FFE4E1; border:1px solid black;'></form>
+</td></tr></table>
+
+</td></tr>
+</table>
+
+<? } else { ?>
+
+<table width=170 cellspacing=0 cellpadding=0 border=1 align=right>
+<tr height=85><td align=center><? echo ("<b>$UserName</b>"); ?>님 반갑습니다</td></tr>
+</table>
+
+<table width=170 cellspacing=0 cellpadding=0 border=0 align=right>
+<tr><td align=center><table><tr><td>
+<form method=post action=mypage.php>
+<input type=submit value=마이페이지 style='border-radius:4px; background-color:#FFE4E1; border:1px solid black;'></form>
+</td><td><form method=post action=logout.php>
+<input type=submit value=로그아웃 style='border-radius:4px; background-color:#FFE4E1; border:1px solid black;'></form>
+</td></tr></table>
+</td></tr>
+
+</table>
+
+<? } ?>
+<?
+echo("
+<style type=\"text/css\">
+	
+	
+	a:link {text-decoration: none; color: #333333;}
+	a:visited {text-decoration: none; color: #333333;}
+</style>");
+?>
+<table align=center border=1 style=" border-collapse:collapse;"><tr align=right><td>
+고객관리센터 <br>010-123-4567</td></tr><tr align=right><td>
+무통장입금 국민은행 012345-56-678789</td>
+</tr></table>
+	</td>
+</tr>
+<tr> 
+  <td colspan=3>
+<table width=900 border=1 cellspacing=0 cellpadding=0 style="  border-collapse:collapse; ">
+	<tr height=50 style=" box-shadow:0px 3px 1px #808080;">
+         <td width=160 align=center style="border-right:none; border-left:none;"><a href=p-list.php?class=1><font style='font-size:12pt;' onMouseover="this.style.color='red'" onMouseout="this.style.color='black'">
+		 <img width=170 src=image/cold1.png onmouseover="this.src='image/cold2.png'" onmouseout="this.src='image/cold1.png'"></font></a></td>
+        
+         <td width=160 align=center style="border-right:none; border-left:none;"><a href=p-list.php?class=2><font style='font-size:12pt;' onMouseover="this.style.color='red'" onMouseout="this.style.color='black'">
+		 <img width=170 src=image/ban1.png onmouseover="this.src='image/ban2.png'" onmouseout="this.src='image/ban1.png'"></font></a></td>
+         
+         <td width=160 align=center style="border-right:none; border-left:none;"><a href=p-list.php?class=3 style="font-color:black;"><font style='font-size:12pt;' onMouseover="this.style.color='red'" onMouseout="this.style.color='black'"><b>
+		 <img width=170 src=image/bake1.png onmouseover="this.src='image/bake2.png'" onmouseout="this.src='image/bake1.png'"></b></font></a></td>
+      
+         <td width=160 align=center style="border-right:none; border-left:none;"><a href=show3.php?board=customer><img  src='image/gogag.png' onmouseover="this.src='image/gogag2.png'" onmouseout="this.src='image/gogag.png'"></b></font></a></td>
+         
+			   
+  
+<? 
+if ($UserID == "admin") {     // 관리자로 로그인 한 경우 [관리메뉴] 표시
+     echo ("<td width=160 align=center style=\"border-right:1px solid #808080 border-right:none; border-left:none;\"><a href=admin.php?board=adminboard><font style='font-size:12pt;' onMouseover=\"this.style.color='red'\" onMouseout=\"this.style.color='black'\"><b>
+				<img src=image/ghan1.png onmouseover=\"this.src='image/ghan2.png'\" onmouseout=\"this.src='image/ghan1.png'\"></b></font></a></td>");   
+} else {     // 로그인 안했거나 일반 사용자로 로그인 한 경우 [쇼핑카트] 표시
+      echo ("<td width=160 align=center style=\"border-right:1px solid #808080 border-right:none; border-left:none;\"><a href=showbag.php><font style='font-size:12pt;’ onMouseover=\"this.style.color='red'\" onMouseout=\"this.style.color='black'\"><b>
+				<img src=image/cart1.png onmouseover=\"this.src='image/cart2.png'\" onmouseout=\"this.src='image/cart1.png'\"></b></font></a></td>");   
+    } 
+?>			
+	    
+          </tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

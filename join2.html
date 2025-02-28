@@ -1,0 +1,101 @@
+<html>
+<head>
+</head>
+<body><center>
+<? include ("top.html"); ?>
+<script   language='Javascript'>
+function   id_check() {
+var id = document.comma.uid.value;
+if (id.length < 5) {
+	window.alert('ID는 5글자 이상 입력해주세요');
+} else {
+	window.open('id_check.php?id=' + id, 'IDCHECK', 'width=450, height=180, scrollbars=yes');
+}
+}
+
+function   go_zip() {
+window.open('zipcode.php','ZIP','width=470, height=180, scrollbars=yes');
+}
+</script>
+
+
+<table width=900 align=center border=0>
+<tr height=40><td></td></tr>
+<tr><td><font size=5><b>회원가입</b></font></td>
+	<td align=right><font size=2>홈 > 회원가입 > 정보입력</font></td></tr>
+<tr><td colspan=2><hr size=2 color=lightgray width=100%></td></tr>	
+</table>
+
+<table width=900 align=center border=0>
+<tr height=30><td></td></tr>
+<tr><td></td></tr>
+<tr height=50><td></td></tr>
+</table>
+
+<table width=900 align=center border=0>
+<tr><td><font color=red size=2>정확한 정보를 입력하셔야 정상적인 이용이 가능합니다.</font></td></tr>
+<tr><td height=30></td></tr>
+<tr><td></td></tr>
+</table>
+
+<form action=register.php method=post name=comma>
+<table width=900 height=500 align=center border=0 style="padding:30px; background-color:F5F5F5;">
+<tr><td>
+
+	<table border=1 width=900 align=center height=500 style="border-right:none;border-left:none; border-collapse:collapse; border-style:none; border-color:C0C0C0;">
+	<tr><td colspan=4 style="border-right:none;border-left:none;border-style:none;">	
+	<tr><td colspan=4 style="border-right:none;border-left:none;border-style:none;"><font size=2>개인정보 입력</font></td></tr>
+	
+	<tr><td style="border-right:none;border-left:none;background-color:FFE4E1;"><font size=2>&nbsp;&nbsp;&nbsp;이름</font></td>
+		<td colspan=3 style="border-right:none;border-left:none;">&nbsp;<input type=text size=20 name=uname style="height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;"></td></tr>
+	
+	<tr><td width=140 style="background-color:FAF0E6; border-right:none;border-left:none;"><font size=2>&nbsp;&nbsp;&nbsp;아이디</font></td>
+		<td style="border-right-style:none; border-right:none;border-left:none;">&nbsp;<input type=text size=20 name=uid style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;"></td>
+		<td width=80 style="border-style:none; border-right:none;border-left:none;">&nbsp;<a href='javascript:id_check()'><input type=button value='중복확인' style="border-radius:3px;background-color:FAF0E6;border:1px solid #6C788C;border-radius:4px;"></a></td>
+		<td width=500 style="border-left-style:none; border-right:none;border-left:none;"><font size=2>(띄어쓰기 없는 영문, 숫자포함 6~10자 사용)</font></td></tr>
+	
+	<tr><td style="background-color:FFE4E1; border-right:none;border-left:none;"><font size=2>&nbsp;&nbsp;&nbsp;비밀번호</font></td>
+		<td style="border-right-style:none; border-right:none;border-left:none;">&nbsp;<input type=password   maxlength=15 style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;" size=20 name=upass1></td>
+		<td colspan=2 style="border-left-style:none; border-right:none;border-left:none;"><font size=2>&nbsp;(비밀번호는 영문,숫자포함 10~20자리 또는 영문,숫자,특수문자포함 8~20자리로 구성)</font></td></tr>
+	
+	<tr><td style="background-color:FAF0E6; border-right:none;border-left:none;"><font size=2>&nbsp;&nbsp;&nbsp;비밀번호확인</font></td>
+		<td style="border-right-style:none; border-right:none;border-left:none;">&nbsp;<input type=password   maxlength=15 style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;" size=20 name=upass2></td>
+		<td colspan=2 style="border-left-style:none; border-right:none;border-left:none;"><font size=2>&nbsp;(확인을 위해서 다시 한번 입력해 주세요.) *사용가능한 특수문자:~!@#$%^&*()</font></td></tr>
+	
+	<tr><td style="background-color:FFE4E1; border-right:none;border-left:none;"><font size=2>&nbsp;&nbsp;&nbsp;휴대전화</font></td>
+		<td style="border-right-style:none; border-right:none;border-left:none;">&nbsp;<input type=text size=20 name='mphone' style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;"></td>
+		<td colspan=2 style="border-left-style:none; border-right:none;border-left:none;"><font size=2></font></td></tr>
+	
+	<tr><td style="background-color:FAF0E6; border-right:none;border-left:none;"><font size=2>&nbsp;&nbsp;&nbsp;좋아하는 음식</font></td>
+		<td colspan=3 style='border-right:none;border-left:none;'>&nbsp;<input type=text size=30 name='favorite' style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;"><font size=2>&nbsp;(필수 입력 항목이 아닙니다.)</td></tr>
+		</td></tr>
+	<tr><td style="background-color:FFE4E1; border-right:none;border-left:none;"><font size=2>&nbsp;&nbsp;&nbsp;나이</font></td>
+		<td colspan=3 style='border-right:none;border-left:none;'>&nbsp;<input type=text size=20 name='age' style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;"><font size=2>&nbsp;(필수 입력 항목이 아닙니다.)</td></tr>
+		</td></tr>
+	
+	<tr><td style="border-bottom-style:none; background-color:FAF0E6;border-right:none;border-left:none;"></td>
+		<td style="border-right-style:none;border-right:none;border-left:none;">&nbsp;<input type=text size=20 name=zip readonly=readonly style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:165;">
+		<td colspan=2 style="border-left-style:none;border-right:none;border-left:none;">&nbsp;<a href='javascript:go_zip()'><input type=button value='우편번호검색' style="height:25; border-radius:3px;background-color:FAF0E6;border:1px solid #6C788C;border-radius:4px;"></a></td></tr>
+	<tr><td style="border-top-style:none;border-right:none;border-left:none; border-bottom-style:none; background-color:FAF0E6;"><font size=2>&nbsp;&nbsp;&nbsp;집주소</font></td>
+		<td colspan=3 style='border-right:none;border-left:none;'>&nbsp;<input type=text size=50 name='addr1' readonly=readonly style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:355;"></td></tr>
+	<tr><td style="border-top-style:none; background-color:FAF0E6; border-right:none;border-left:none;"></td>
+		<td colspan=3 style='border-right:none;border-left:none;'>&nbsp;<input type=text size=50 name='addr2' value=상세주소입력 style="height:25;height:25;border-top:none;border-left:none;border-right:none;border-bottom:2px solid #6C788C; width:355; color:808080;"></td></tr>
+	
+	<tr><td height=10 colspan=4 style="border-style:none;"></td></tr>
+	</table>
+</td></tr>
+</table>
+
+<table width=900 align=center>
+<tr><td height=50></td></tr>
+<tr><td><center><input type=submit value="회원가입" style="width:100px; height:50px; background-color:FAF0E6;border:1px solid #6C788C;border-radius:4px;"></td></tr>
+</table>
+
+<table width=900 align=center border=0>
+<tr><td height=100></td></tr>
+</table>
+
+</form>		
+
+<? include ("bottom.html"); ?>
+</body>
